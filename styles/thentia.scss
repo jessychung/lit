@@ -14,6 +14,16 @@ $thentia-red: #ea573d;
   }
 }
 
+@font-face {
+  font-family: walsheim;
+  src: url('../fonts/GT-Walsheim-Pro-Medium.ttf');
+}
+
+@font-face {
+  font-family: circular;
+  src: url('../fonts/circular-book.otf');
+}
+
 html,
 body {
   margin: 0;
@@ -264,7 +274,7 @@ canvas {
       text-align: center;
       h1 {
         color: #fff;
-        font-family: "mr-eaves-modern",sans-serif;
+        font-family: "circular",sans-serif;
         font-weight: $regular;
         font-size: 57px;
         margin-top: 0px;
