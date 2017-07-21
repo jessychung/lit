@@ -232,6 +232,12 @@ body {
   color: #333;
   background: #ffff00; }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important; }
+
 .container {
   padding-right: 60px; }
 

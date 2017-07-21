@@ -56,7 +56,7 @@
 
         <h1>menu</h1>
 
-        <div class="thentia-menu">
+        <div class="thentia-menu preload">
             <?php
             $defaults = array(
                 'menu'            => 'side-menu',

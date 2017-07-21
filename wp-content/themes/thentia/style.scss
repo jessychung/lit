@@ -299,6 +299,13 @@ body {
 //  }
 //}
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 .container {
   padding-right: 60px;
 }
@@ -420,6 +427,8 @@ canvas {
     display: block;
   }
 }
+
+
 
 .showMobileMenu {
   opacity: 1 !important;
