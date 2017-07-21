@@ -17,12 +17,9 @@ jQuery(window).load(function () {
     }, 500);
 
     setTimeout(function () {
-        $('.main-title-text').find('a:first-of-type').show().addClass('animated fadeIn');
+        $('.main-title-text').find('a').show().addClass('animated fadeIn');
     }, 800);
 
-    setTimeout(function () {
-        $('.main-title-text').find('a:last-of-type').show().addClass('animated fadeIn');
-    }, 1000);
 
 });
 
@@ -37,6 +34,12 @@ $(document).ready(function () {
             $(this).addClass('full-screen-menu', 3000);
             $(this).find('.bars div').toggleClass('cross');
         }
+        $('.thentia-menu li').each(function(i) {
+            var menuItem = $(this);
+            setTimeout(function() {
+                menuItem.addClass('showMobileMenu');
+            },  i*200);
+        });
     });
 
     exitMenu.on('click', function (e) {

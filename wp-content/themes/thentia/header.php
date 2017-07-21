@@ -57,13 +57,19 @@
         <h1>menu</h1>
 
         <div class="thentia-menu">
-            <ul>
-                <li>Home</li>
-                <li>Products</li>
-                <li>About</li>
-                <li>Careers</li>
-                <li>Contact</li>
-            </ul>
+            <?php
+            $defaults = array(
+                'menu'            => 'side-menu',
+                'container'       => '',
+                'menu_class'      => 'menu',
+                'echo'            => true,
+                'fallback_cb'     => 'wp_page_menu',
+                'depth'           => 0
+            );
+
+            wp_nav_menu( $defaults );
+
+            ?>
         </div>
     </div>
 </div>

@@ -222,7 +222,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  font-family: 'walsheim', sans-serif; }
+  font-family: 'walsheim', -apple-system,BlinkMacSystemFont,"Roboto",Helvetica,Arial,"Lucida Grande",sans-serif; }
 
 ::-moz-selection {
   color: #333;
@@ -322,10 +322,69 @@ canvas {
   .full-screen-menu .thentia-menu {
     display: block; }
 
-.thentia-menu ul {
-  list-style-type: none; }
-  .thentia-menu ul li {
-    color: #333; }
+.showMobileMenu {
+  opacity: 1 !important;
+  transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  transform: translate(0, 0px) !important;
+  -webkit-transform: translate(0, 0px) !important; }
+
+.thentia-menu {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  margin-right: 66px; }
+  .thentia-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    .thentia-menu ul li {
+      padding: 3px 0;
+      opacity: 0;
+      transition: all .3s linear;
+      -moz-transition: all .3s linear;
+      -webkit-transition: all .3s linear;
+      transform: translate(20px, 0);
+      -webkit-transform: translate(20px, 0); }
+      .thentia-menu ul li a {
+        color: #333;
+        font-size: 47px;
+        position: relative;
+        transition: all .3s;
+        font-family: 'walsheim', sans-serif; }
+        .thentia-menu ul li a:before {
+          content: "";
+          background: #ffff00;
+          position: absolute;
+          width: 0;
+          height: 7px;
+          bottom: 9px;
+          left: 0;
+          z-index: -1;
+          animation: .3s forwards grow-left linear;
+          animation-fill-mode: forwards; }
+        .thentia-menu ul li a:hover, .thentia-menu ul li a:active, .thentia-menu ul li a:focus {
+          text-decoration: none;
+          transition: all .3s; }
+          .thentia-menu ul li a:hover:before, .thentia-menu ul li a:active:before, .thentia-menu ul li a:focus:before {
+            animation: .3s forwards grow-right linear;
+            animation-fill-mode: forwards; }
+
+@keyframes grow-right {
+  0% {
+    width: 0; }
+  100% {
+    width: 100%; } }
+
+@keyframes grow-left {
+  0% {
+    width: 100%; }
+  100% {
+    width: 0; } }
 
 .cross:first-child {
   transform: rotate(45deg);
@@ -424,22 +483,29 @@ canvas {
           bottom: 9px; }
       .main-title #particles .main-title-text .go-button {
         color: #fff;
-        position: relative; }
+        position: relative;
+        display: inline-block;
+        font-size: 17px; }
+        .main-title #particles .main-title-text .go-button:hover, .main-title #particles .main-title-text .go-button:active, .main-title #particles .main-title-text .go-button:focus {
+          cursor: pointer;
+          text-decoration: none; }
         .main-title #particles .main-title-text .go-button .arrow {
-          width: 120px;
-          position: absolute; }
+          width: 57px;
+          position: absolute;
+          right: -74px;
+          bottom: 8px; }
           .main-title #particles .main-title-text .go-button .arrow .line {
-            margin-top: 14px;
-            width: 90px;
-            background: blue;
-            height: 10px;
+            margin-top: 5px;
+            width: 48px;
+            background: #fff;
+            height: 1px;
             float: left; }
           .main-title #particles .main-title-text .go-button .arrow .point {
             width: 0;
             height: 0;
-            border-top: 20px solid transparent;
-            border-bottom: 20px solid transparent;
-            border-left: 30px solid blue;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 9px solid #fff;
             float: right; }
       .main-title #particles .main-title-text p {
         font-family: "roboto",sans-serif;
