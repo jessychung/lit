@@ -30,6 +30,9 @@ $(document).ready(function () {
     var exitMenu = $('.bars');
 
     sideMenu.on('click', function () {
+
+        $('.thentia-menu').removeClass('preload');
+
         if(!exitMenu.find('div').hasClass('cross')) {
             $(this).addClass('full-screen-menu', 3000);
             $(this).find('.bars div').toggleClass('cross');
@@ -44,7 +47,7 @@ $(document).ready(function () {
 
     exitMenu.on('click', function (e) {
         e.stopPropagation();
-
+        $('.thentia-menu').addClass('preload');
         if($(this).find('div').hasClass('cross')) {
             $(this).find('div').toggleClass('cross');
             $(this).parents('.side-menu').removeClass('full-screen-menu', 3000);

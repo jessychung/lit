@@ -715,6 +715,52 @@ canvas {
   }
 }
 
+.products-bg {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color:  #060606;
+  background-image: url("/wp-content/uploads/2017/07/asfalt-light-lighter.png"), linear-gradient(to bottom, #060606, #082335);
+}
+
+.products-title {
+  padding: 100px 0;
+  h1 {
+    color: #fff;
+    font-size: 50px;
+  }
+  p {
+    color: #fff;
+    font-size: 18px;
+  }
+}
+
+.products-summary {
+  .products-img {
+    background-color: #fff;
+    overflow: hidden;
+  }
+  h1 {
+    color: #fff;
+  }
+  p {
+    color: #fff;
+  }
+  a {
+    color: #fff;
+  }
+  .vectorleap {
+    background-color: #e03a2c;
+  }
+}
+
+.products-single {
+  &.vectorleap {
+    background-color: #e03a2c;
+  }
+}
+
 .footer {
   padding: 50px 0;
   background-color: #f2f2f2;
