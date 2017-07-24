@@ -57,6 +57,25 @@ $(document).ready(function () {
         }
     });
 
+    $('.products-main .products-single').each(function () {
+        $(this).hover(
+            function() {
+                $(this).find('.products-go').fadeIn();
+                $(this).find('.products-go').find('h1').addClass('fadeInUp');
+                $(this).find('.products-logo-hover').fadeIn();
+                $(this).find('.products-logo').fadeOut();
+                $(this).find('.products-img').addClass('logo-hover');
+            }, function() {
+                $(this).find('.products-go').fadeOut();
+                $(this).find('.products-logo-hover').fadeOut();
+                $(this).find('.products-logo').fadeIn();
+                $(this).find('.products-img').removeClass('logo-hover');
+            }
+        );
+
+    });
+
+
     //Wave Particles
 
     var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;

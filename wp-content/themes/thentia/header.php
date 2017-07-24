@@ -75,7 +75,7 @@
 </div>
 
 <div class="main-menu">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 col-sm-4">
                 <a href="#">

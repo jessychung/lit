@@ -241,6 +241,12 @@ body {
 .container {
   padding-right: 60px; }
 
+.container-fluid {
+  padding-right: 120px;
+  padding-left: 60px;
+  margin-right: auto;
+  margin-left: auto; }
+
 canvas {
   height: 100% !important;
   width: 100% !important; }
@@ -462,19 +468,15 @@ canvas {
     .main-title #particles .main-title-text {
       position: absolute;
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center; }
+      transform: translate(0%, -50%); }
       .main-title #particles .main-title-text h1 {
         color: #fff;
         font-family: "circular",sans-serif;
         font-weight: 400;
-        font-size: 46px;
+        font-size: 6vw;
         pointer-events: none;
-        max-width: 700px;
         margin: 0 auto;
         margin-bottom: 50px;
-        line-height: 69px;
         display: block; }
       .main-title #particles .main-title-text .y-line {
         position: relative; }
@@ -486,7 +488,7 @@ canvas {
           background-color: #005076;
           left: 0;
           z-index: -1;
-          bottom: 9px; }
+          bottom: 13px; }
       .main-title #particles .main-title-text .go-button {
         color: #fff;
         position: relative;
@@ -538,6 +540,16 @@ canvas {
           text-decoration: none;
           cursor: pointer; }
 
+.main-about {
+  padding: 150px 0 0 0;
+  background-color: #060809;
+  border-bottom: 1px solid #dcdcdc; }
+  .main-about h1 {
+    font-size: 43px;
+    color: #fff; }
+  .main-about h2 {
+    color: #fff; }
+
 .products {
   background: linear-gradient(to right, #4cb79c, #006ea2);
   color: #fff;
@@ -578,21 +590,89 @@ canvas {
     color: #fff;
     font-size: 18px; }
 
-.products-summary .products-img {
-  background-color: #fff;
-  overflow: hidden; }
+.products-main {
+  margin-right: -60px;
+  margin-left: -60px; }
+  .products-main .col-md-4 {
+    padding: 0; }
+    .products-main .col-md-4:first-of-type .products-info {
+      border-left: 0; }
 
-.products-summary h1 {
-  color: #fff; }
-
-.products-summary p {
-  color: #fff; }
-
-.products-summary a {
-  color: #fff; }
-
-.products-summary .vectorleap {
-  background-color: #e03a2c; }
+.products-single {
+  position: relative; }
+  .products-single .row {
+    margin-left: -75px;
+    margin-right: -60px; }
+  .products-single:hover {
+    transition: all .3s;
+    cursor: pointer; }
+  .products-single .products-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 218px;
+    position: relative;
+    transition: all .3s; }
+    .products-single .products-img:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(6, 10, 12, 0.7);
+      transition: all .3s; }
+  .products-single .logo-hover:after {
+    background-color: rgba(255, 255, 255, 0.9) !important; }
+  .products-single .products-info {
+    background-color: #fff;
+    margin-top: -20px;
+    padding: 30px;
+    border-left: 1px solid #dcdcdc;
+    position: relative; }
+    .products-single .products-info h1 {
+      color: inherit;
+      font-size: 31px; }
+    .products-single .products-info p {
+      color: #a5a5a5; }
+    .products-single .products-info .products-go {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      font-size: 25px;
+      color: #fff;
+      text-align: center;
+      display: none; }
+      .products-single .products-info .products-go h1 {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        margin: 0;
+        font-size: 25px; }
+  .products-single .products-logo {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    max-width: 289px;
+    transform: translate(-50%, -50%); }
+  .products-single .products-logo-hover {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    max-width: 289px;
+    transform: translate(-50%, -50%);
+    display: none; }
+  .products-single.vectorleap .products-go {
+    background-color: #e03a2c; }
 
 .products-single.vectorleap {
   background-color: #e03a2c; }

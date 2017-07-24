@@ -39,6 +39,44 @@ template name: Products
     </div>
 </div>
 
+    <div class="products-summary helsby">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="products-logo">
+
+                    </div>
+                    <div class="products-img" style="background-image: url('<?php echo content_url (); ?>/uploads/2017/07/scott-webb-176434.jpg')"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="products-info">
+                        <h1>Full Service Regulatory Solutions </h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt diam ut sapien dapibus accumsan. Nunc risus nisl, imperdiet quis iaculis vitae, ultricies at mauris.</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="products-summary smartgovern">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="products-img" style="background-image: url('<?php echo content_url (); ?>/uploads/2017/07/breather-187924.jpg')">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="products-info">
+                        <h1>SmartGovern</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt diam ut sapien dapibus accumsan. Nunc risus nisl, imperdiet quis iaculis vitae, ultricies at mauris.</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <?php endwhile; // end of the loop. ?>
 
 
