@@ -810,6 +810,7 @@ canvas {
     h1 {
       color: inherit;
       font-size: 31px;
+      margin-top: 0;
     }
     p {
       color: #a5a5a5;
@@ -873,4 +874,16 @@ canvas {
 .footer {
   padding: 50px 0;
   background-color: #f2f2f2;
+}
+
+.elementor-editor-active {
+  .main-menu {
+    pointer-events: none;
+  }
+}
+
+video{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }

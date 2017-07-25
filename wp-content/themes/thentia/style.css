@@ -631,7 +631,8 @@ canvas {
     position: relative; }
     .products-single .products-info h1 {
       color: inherit;
-      font-size: 31px; }
+      font-size: 31px;
+      margin-top: 0; }
     .products-single .products-info p {
       color: #a5a5a5; }
     .products-single .products-info .products-go {
@@ -680,3 +681,11 @@ canvas {
 .footer {
   padding: 50px 0;
   background-color: #f2f2f2; }
+
+.elementor-editor-active .main-menu {
+  pointer-events: none; }
+
+video {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
