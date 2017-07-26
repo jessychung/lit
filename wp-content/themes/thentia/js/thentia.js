@@ -4,10 +4,19 @@ jQuery(window).load(function () {
 
     $('.loading').find('.uil-rolling-css').fadeOut('fast');
 
-    $('.loading').animate({
-        width: "60px",
-        right: 0
-    }, 800).fadeOut('fast');
+    if($(window).width() < 768) {
+        $('.loading').animate({
+            width: "0px",
+            right: 0
+        }, 800).fadeOut('fast');
+    } else {
+        $('.loading').animate({
+            width: "60px",
+            right: 0
+        }, 800).fadeOut('fast');
+    }
+
+
 
     $('.main-title-text').find('h1').hide();
     $('.main-title-text').find('a').hide();
@@ -26,12 +35,42 @@ jQuery(window).load(function () {
 
 
 $(document).ready(function () {
+
     var sideMenu = $('.side-menu');
-    var exitMenu = $('.bars');
+    var exitMenu = $('.desk-bars');
+    var mobileBars = $('.mobile-bars');
+
+    mobileBars.on('click', function () {
+
+        $('.thentia-menu').removeClass('preload');
+
+        $('body').addClass('no-scroll');
+
+        sideMenu.addClass('full-screen-menu', 3000);
+
+        sideMenu.find('.desk-bars').removeClass('pointer-events');
+
+        if(!exitMenu.find('div').hasClass('cross')) {
+            sideMenu.addClass('full-screen-menu', 3000);
+            sideMenu.find('.bars div').toggleClass('cross');
+        }
+
+        $('.thentia-menu li').each(function(i) {
+            var menuItem = $(this);
+            setTimeout(function() {
+                menuItem.addClass('showMobileMenu');
+            },  i*200);
+        });
+
+    });
 
     sideMenu.on('click', function () {
 
         $('.thentia-menu').removeClass('preload');
+
+        $('body').addClass('no-scroll');
+
+        $(this).find('.desk-bars').removeClass('pointer-events');
 
         if(!exitMenu.find('div').hasClass('cross')) {
             $(this).addClass('full-screen-menu', 3000);
@@ -46,15 +85,28 @@ $(document).ready(function () {
     });
 
     exitMenu.on('click', function (e) {
+
         e.stopPropagation();
-        $('.thentia-menu').addClass('preload');
+
         if($(this).find('div').hasClass('cross')) {
             $(this).find('div').toggleClass('cross');
             $(this).parents('.side-menu').removeClass('full-screen-menu', 3000);
+            $(this).addClass('pointer-events');
+            $('body').removeClass('no-scroll');
+            mobileBars.removeClass('pointer-events');
+            if(mobileBars.find('div').hasClass('cross')) {
+                mobileBars.find('div').toggleClass('cross');
+            }
         } else {
             $(this).parents('.side-menu').addClass('full-screen-menu', 3000);
             $(this).find('div').toggleClass('cross');
         }
+
+        $('.thentia-menu li').each(function(i) {
+            var menuItem = $(this);
+            menuItem.addClass('showMobileMenu');
+
+        });
     });
 
     // $('.products-main .products-single').each(function () {
@@ -91,7 +143,7 @@ $(document).ready(function () {
 
     function init() {
         container = document.getElementById( 'particles' );
-        document.getElementById( 'main' ).appendChild(container);
+        // document.getElementById( 'main' ).appendChild(container);
         camera = new THREE.PerspectiveCamera( 65, window.innerWidth / window.innerHeight, 1, 10000 );
         camera.position.z = 200;
         camera.position.y = 425;

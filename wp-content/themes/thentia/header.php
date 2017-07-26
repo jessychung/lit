@@ -45,10 +45,11 @@
     <div class='uil-rolling-css' style='transform:scale(0.36);'><div><div></div><div></div></div></div>
 </div>
 
+
 <div class="side-menu">
 
     <div class="full-screen-hide">
-        <div class="bars animated-bars">
+        <div class="bars desk-bars animated-bars pointer-events">
             <div></div>
             <div></div>
             <div></div>
@@ -56,7 +57,7 @@
 
         <h1>menu</h1>
 
-        <div class="thentia-menu preload">
+        <div class="thentia-menu">
             <?php
             $defaults = array(
                 'menu'            => 'side-menu',
@@ -77,17 +78,32 @@
 <div class="main-menu">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 col-sm-4">
+            <div class="col-md-3 col-sm-4 col-xs-8">
                 <a href="#">
                     <img src="<?php echo content_url (); ?>/uploads/2017/07/thentia_logo_c.svg" class="thentia-logo-w" width="150px">
                 </a>
             </div>
-            <div class="col-md-9 col-sm-8" style="text-align: right">
-                <ul>
-                    <a href="">
-                        <li>Contact</li>
-                    </a>
-                </ul>
+            <div class="col-md-9 col-sm-8 hidden-xs" style="text-align: right">
+                <?php
+                $defaults = array(
+                    'menu'            => 'top-menu',
+                    'container'       => '',
+                    'menu_class'      => 'menu',
+                    'echo'            => true,
+                    'fallback_cb'     => 'wp_page_menu',
+                    'depth'           => 0
+                );
+
+                wp_nav_menu( $defaults );
+
+                ?>
+            </div>
+            <div class="col-xs-4 visible-xs" style="text-align: right">
+                <div class="bars animated-bars mobile-bars">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
         </div>
     </div>
