@@ -79,7 +79,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 col-sm-4 col-xs-8">
-                <a href="#">
+                <a href="<?php home_url()?>">
                     <img src="<?php echo content_url (); ?>/uploads/2017/07/thentia_logo_c.svg" class="thentia-logo-w" width="150px">
                 </a>
             </div>
