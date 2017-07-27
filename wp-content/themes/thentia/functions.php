@@ -30,3 +30,13 @@ function my_custom_post_product() {
 
 }
 add_action( 'init', 'my_custom_post_product' );
+
+function elementor_accordion_title() { ?>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery( '.elementor-accordion-title' ).removeClass( 'active' );
+            jQuery( '.elementor-accordion-content' ).css( 'display', 'none' );
+        });
+    </script>
+<?php }
+add_action( 'wp_footer', 'elementor_accordion_title', 99 );

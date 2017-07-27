@@ -37,6 +37,12 @@ $smartgovern: #4d12c3;
 }
 
 @font-face {
+  font-family: walsheim-light;
+  src: url('/wp-content/themes/thentia/fonts/GT-Walsheim-Pro-Regular.ttf');
+}
+
+
+@font-face {
   font-family: circular;
   src: url('/wp-content/themes/thentia/fonts/circular-book.otf');
 }
@@ -303,7 +309,6 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-
 
 canvas {
   height: 100% !important;
@@ -913,11 +918,31 @@ canvas {
   }
 }
 
+#map {
+  height: 400px;
+}
+
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+  display:none;
+}
+.gmnoprint div {
+  background:none !important;
+}
+
+
 footer {
   padding: 30px 0;
   background-color: #060606;
-  border-top: 1px solid #212121;
+  border-top: 1px solid #3c3c3c;
+  background-image: url("/wp-content/uploads/2017/07/asfalt-light-lighter.png"), linear-gradient(to bottom, #060606, #060606);
   color: #fff;
+  p {
+    margin: 0;
+    opacity: .6;
+  }
 }
 
 .elementor-editor-active {
@@ -926,7 +951,23 @@ footer {
   }
 }
 
+.subtitle {
+  position: relative;
+  display: inline-block;
+  &:after {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    right: -65px;
+    top: 10px;
+
+  }
+}
+
 video{
+  width: 100% !important;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -936,6 +977,29 @@ video{
   max-width:1200px;
 }
 
+.elementor{
+  a {
+    color: inherit;
+    position: relative;
+    z-index: 1;
+    &:hover {
+      color: #fff;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      bottom: 3px;
+      height: 6px;
+      left: 0;
+      z-index: -1;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+  p {
+    font-family: 'walsheim-light';
+  }
+}
 
 @media (max-width:1024px) and (min-width:768px) {
   .container-fluid {
