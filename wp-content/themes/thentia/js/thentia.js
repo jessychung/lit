@@ -1,4 +1,4 @@
-
+jQuery.noConflict();
 jQuery(window).load(function () {
 
 
@@ -34,7 +34,7 @@ jQuery(window).load(function () {
 
 
 
-$(document).ready(function () {
+jQuery(document).ready(function () {
 
     var sideMenu = $('.side-menu');
     var exitMenu = $('.desk-bars');
