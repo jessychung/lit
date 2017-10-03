@@ -13,7 +13,14 @@ function tzcustom_default($sldshowID,$template, $plist,$query,$query_arg,$slider
             if ($content['tzcustom_image_display'] == 'yes') {
                 if (has_post_thumbnail()) { ?>
 
-                    <div class="cmtbc-homepage-post-img" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
+                    <div style="position: relative">
+                        <div class="cmtbc-homepage-post-img" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
+                        <div class="cmtbc-homepage-news blend">
+                            <h1>News & Announcements</h1>
+                        </div>
+                    </div>
+
+
 
                     <?php
 
