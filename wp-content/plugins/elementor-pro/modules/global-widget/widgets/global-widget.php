@@ -2,11 +2,12 @@
 namespace ElementorPro\Modules\GlobalWidget\Widgets;
 
 use Elementor\Widget_Base;
+use ElementorPro\Base\Base_Widget;
 use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class Global_Widget extends Widget_Base {
+class Global_Widget extends Base_Widget {
 	/**
 	 * @var Widget_Base
 	 */
@@ -14,32 +15,20 @@ class Global_Widget extends Widget_Base {
 
 	public function __construct( $data = [], $args = null ) {
 		if ( $data ) {
-			$templates_manager = Plugin::elementor()->templates_manager;
-
-			$params = [
+			$template_data = Plugin::elementor()->templates_manager->get_template_data( [
 				'source' => 'local',
 				'template_id' => $data['templateID'],
-			];
+			] );
 
-			if ( method_exists( $templates_manager, 'get_template_content' ) ) {
-				$template_content = $templates_manager->get_template_content( $params );
-			} else {
-				$template_content = $templates_manager->get_template_data( $params );
+			if ( is_wp_error( $template_data ) ) {
+				throw new \Exception( $template_data->get_error_message() );
 			}
 
-			if ( is_wp_error( $template_content ) ) {
-				throw new \Exception( $template_content->get_error_message() );
-			}
-
-			if ( isset( $template_content['content'] ) ) {
-				$template_content = $template_content['content'];
-			}
-
-			if ( ! $template_content ) {
+			if ( empty( $template_data['content'] ) ) {
 				throw new \Exception( 'Template content not found.' );
 			}
 
-			$data['settings'] = $template_content[0]['settings'];
+			$data['settings'] = $template_data['content'][0]['settings'];
 		}
 
 		parent::__construct( $data, $args );
@@ -117,20 +106,12 @@ class Global_Widget extends Widget_Base {
 	}
 
 	private function _get_template_content() {
-		$templates_manager = Plugin::elementor()->templates_manager;
-
-		$params = [
+		$template_data = Plugin::elementor()->templates_manager->get_template_data( [
 			'source' => 'local',
 			'template_id' => $this->get_data( 'templateID' ),
-		];
+		] );
 
-		if ( method_exists( $templates_manager, 'get_template_content' ) ) {
-			$template_content = $templates_manager->get_template_content( $params );
-		} else {
-			$template_content = $templates_manager->get_template_data( $params )['content'];
-		}
-
-		return $template_content[0];
+		return $template_data['content'][0];
 	}
 
 	private function _init_original_element_instance() {

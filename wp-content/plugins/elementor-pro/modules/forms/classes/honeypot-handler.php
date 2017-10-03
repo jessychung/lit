@@ -88,7 +88,7 @@ class Honeypot_Handler {
 			}
 		}
 
-		$elementor->controls_manager->add_control_to_stack( $widget, 'form_fields', $control_data, true );
+		$elementor->controls_manager->update_control_in_stack( $widget, 'form_fields', $control_data );
 	}
 
 	public function __construct() {

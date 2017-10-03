@@ -1,4 +1,4 @@
-/*! elementor-pro - v1.5.8 - 25-07-2017 */
+/*! elementor-pro - v1.9.3 - 03-10-2017 */
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var EditorModule = function() {
 	var self = this;
@@ -90,13 +90,7 @@ var ElementorPro = Marionette.Application.extend( {
 
 	libraryRemoveGetProButtons: function() {
 		elementor.hooks.addFilter( 'elementor/editor/template-library/template/action-button', function( viewID, templateData ) {
-			var insertTemplate = '#tmpl-elementor-template-library-insert-button';
-
-			if ( ! templateData ) {
-				return insertTemplate;
-			}
-
-			return templateData.isPro && ! elementorPro.config.isActive ? '#tmpl-elementor-pro-template-library-activate-license-button' : insertTemplate;
+			return templateData.isPro && ! elementorPro.config.isActive ? '#tmpl-elementor-pro-template-library-activate-license-button' : '#tmpl-elementor-template-library-insert-button';
 		} );
 	}
 } );
@@ -157,7 +151,7 @@ module.exports = Module.extend( {
 		var self = this;
 
 		elementor.channels.editor.on( 'section:activated', function( sectionName, editor ) {
-			var model = editor.getOption( 'editedElementView' ).model,
+			var model = editor.getOption( 'editedElementView' ).getEditModel(),
 				currentElementType = model.get( 'elType' ),
 				_arguments = arguments;
 
@@ -191,9 +185,9 @@ module.exports = function() {
 	self.init = function() {
 		elementor.hooks.addFilter( 'editor/style/styleText', self.addCustomCss );
 
-		elementor.pageSettings.addChangeCallback( 'custom_css', self.addPageCustomCss );
+		elementor.settings.page.addChangeCallback( 'custom_css', self.addPageCustomCss );
 
-		self.addPageCustomCss.call(  elementor.pageSettings,  elementor.pageSettings.model.get( 'custom_css' ) );
+		self.addPageCustomCss.call(  elementor.settings.page,  elementor.settings.page.model.get( 'custom_css' ) );
 	};
 
 	self.addPageCustomCss = function( newValue ) {
@@ -707,13 +701,7 @@ module.exports =  EditorModule.extend( {
 				description: elementorPro.translate( 'global_widget_save_description' )
 			},
 			prepareSavedData: function( data ) {
-				// Todo: Temp patch since 1.3.0
-				if ( data.content ) {
-					data.widgetType = data.content[0].widgetType;
-				} else {
-					data.widgetType = data.data[0].widgetType;
-				}
-				// END patch
+				data.widgetType = data.content[0].widgetType;
 
 				return data;
 			},
@@ -800,11 +788,7 @@ module.exports =  EditorModule.extend( {
 			success: function( data ) {
 				globalModel.set( 'settingsLoadedStatus', 'loaded' ).trigger( 'settings:loaded' );
 
-				if ( data.content ) {
-					data = data.content;
-				}
-
-				var settings = data[0].settings,
+				var settings = data.content[0].settings,
 					settingsModel = globalModel.get( 'settings' );
 
 				// Don't track it in History
@@ -1017,6 +1001,8 @@ module.exports = elementor.modules.element.Model.extend( {
 			globalModel = elementorPro.modules.globalWidget.getGlobalModels( templateID );
 
 		elementorFrontend.config.elements.data[ this.cid ] = globalModel.get( 'settings' );
+
+		elementorFrontend.config.elements.editSettings[ this.cid ] = globalModel.get( 'editSettings' );
 	},
 
 	initEditSettings: function() {},

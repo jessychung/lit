@@ -6,12 +6,12 @@ use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Color;
 use Elementor\Scheme_Typography;
-use Elementor\Widget_Base;
+use ElementorPro\Base\Base_Widget;
 use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class Login extends Widget_Base {
+class Login extends Base_Widget {
 
 	public function get_name() {
 		return 'login';
@@ -23,10 +23,6 @@ class Login extends Widget_Base {
 
 	public function get_icon() {
 		return 'eicon-lock-user';
-	}
-
-	public function get_categories() {
-		return [ 'pro-elements' ];
 	}
 
 	protected function _register_controls() {
@@ -212,8 +208,6 @@ class Login extends Widget_Base {
 			[
 				'label' => __( 'Custom Label', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => __( 'No', 'elementor-pro' ),
-				'label_on' => __( 'Yes', 'elementor-pro' ),
 				'condition' => [
 					'show_labels' => 'yes',
 				],

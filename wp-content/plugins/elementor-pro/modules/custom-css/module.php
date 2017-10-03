@@ -52,12 +52,22 @@ class Module extends Module_Base {
 		);
 
 		$element->add_control(
+			'custom_css_title',
+			[
+				'raw' => __( 'Add your own custom CSS here', 'elementor-pro' ),
+				'type' => Controls_Manager::RAW_HTML,
+			]
+		);
+
+		$element->add_control(
 			'custom_css',
 			[
 				'type' => Controls_Manager::CODE,
-				'label' => __( 'Add your own custom CSS here', 'elementor-pro' ),
+				'label' => __( 'Custom CSS', 'elementor-pro' ),
 				'language' => 'css',
 				'render_type' => 'ui',
+				'show_label' => false,
+				'separator' => 'none',
 			]
 		);
 

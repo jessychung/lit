@@ -1,5 +1,85 @@
 # Elementor Pro - by Elementor.com
 
+#### 2017-10-03 v1.9.3
+* Fix! - Condition slide style that got effected by previous update
+
+#### 2017-10-02 v1.9.2
+* New! - Added integration with MailPoet 3 for Forms actions
+* Fix! - Removed height control from Testimonial carousel in mobile editing mode
+* Fix! - Removed bottom padding when there's no pagination in Testimonial carousel
+* Fix! - Added condition for slides style section in skin bubble mode
+* Fix! - Slides per view control for mobile editing in Testimonial carousel
+* Fix! - Navigation Arrows icons matched with common Elementor Navigation Arrows
+
+#### 2017-09-28 v1.9.1
+* Fix! - Slides per view for slideshow carousel
+* Fix! - Final polish for the new Testimonial Carousel widget
+* Fix! - Don't play video if slide type is not video
+* Fix! - Removed slides style section condition ([#2497](https://ggithub.com/pojome/elementor/issues/2497))
+* Fix! - Set cursor as pointer for slideshow thumbnails
+
+#### 2017-09-26 v1.9.0
+* New! - Added Media Carousel widget ([#216](https://github.com/pojome/elementor/issues/216), [#347](https://github.com/pojome/elementor/issues/347), [#2209](https://github.com/pojome/elementor/issues/2209))
+* New! - Added Testimonial Carousel widget ([#715](https://github.com/pojome/elementor/issues/715))
+
+#### 2017-09-24 v1.8.3
+* Fix! - Added compatibility for WordPress 4.8.2 & 4.7.6
+* Fix! - Remove slashes from Form sent data
+
+#### 2017-09-19 v1.8.2
+* Tweak! - Added target URL for the tweet message in Blockquote widget
+* Tweak! - Render the slide height before the slider is finished loading
+* Fix! - Space between words for Animated Headline widget
+* Fix! - RTL compatibility for Animated Headline widget
+* Fix! - Italic font style for Animated Headline widget
+* Fix! - Excluded Menu widget from the WP Editor text rendering
+
+#### 2017-09-18 v1.8.1
+* Fix! - WCAG Compatible "required" field attribute for W3C validation ([#2391](https://github.com/pojome/elementor/issues/2391))
+* Fix! - Print the main menu only when is necessary in Menu widget
+* Fix! - Use CSS media query instead of JS to hide items in Menu widget to avoid flickering on page load ([#2381](https://github.com/pojome/elementor/issues/2381))
+
+#### 2017-09-12 v1.8.0
+* New! - Added Nav Menu widget ([#1406](https://github.com/pojome/elementor/issues/1406))
+* Fix! - Field ID for checkbox control in Form widget ([#2279](https://github.com/pojome/elementor/issues/2279))
+* Fix! - Style for Blockquote widget included
+
+#### 2017-09-07 v1.7.2
+* Tweak! - Loading Facebook SDK via JS for better compatibility with caching plugins
+* Fix! - Responsive Embed Facebook post widget for Safari iOS ([#2340](https://github.com/pojome/elementor/issues/2340))
+
+#### 2017-09-05 v1.7.1
+* Fix! - Facebook SDK version
+
+#### 2017-09-05 v1.7.0
+* New! - Added Facebook Button widget for Like, Recommend, Share and Follow
+* New! - Added Facebook Embed widget for Post, Video and Comment
+* New! - Added Facebook Comments widget
+* New! - Added Facebook Page widget (Previously known as Like Box)
+* New! - Added Blockquote widget with Tweet button
+* Tweak! - Added Facebook SDK integration for all Facebook widgets
+* Fix! - Animated headline rotating with long words
+
+#### 2017-08-28 v1.6.1
+* Fix! - Animated Headline marker gets in front of neighboring spans even when "Bring to Front" is not set
+* Fix! - Stroke animation in Animated Headline for MS Edge browser
+* Fix! - Animated headline with more than 1-word per rotation
+* Fix! - Animated Headline in two lines
+* Fix! - Some errors in Global widget
+
+#### 2017-08-22 v1.6.0
+* New! - Added Animated Headline widget
+* New! - Added Hidden field for Forms widget
+* Tweak! - Added notice to update Elementor to v1.6.5 or higher
+* Fix! - CSS Animations names no longer minified, in order to prevent unexpected conflicts
+
+#### 2017-08-16 v1.5.9
+* Tweak! - Added compatibility for the future release of Elementor v1.7
+* Fix! - Portfolio compatibility for GeneratePress theme
+* Fix! - Portfolio filter compatibility for RTL
+* Fix! - Pagination apply for all posts widget in the page
+* Fix! - Global form widget with MailChimp integration not saving
+
 #### 2017-07-25 v1.5.8
 * Tweak! - Added compatibility for the future release of Elementor v1.6
 * Fix! - Improved backward compatibility for query control rename
@@ -10,7 +90,7 @@
 * Tweak! - Rename `panel-posts-control` to `query-control` and added fallback support
 * Tweak! - Added compatibility for the future release of Elementor with history feature
 * Fix! - reCAPTCHA preview on the editor
-* Fix! - Manual selection (query control) has stopped working after saving
+* Fix! - Manual selection (query control) has stopped working after saving ([#2000](https://github.com/pojome/elementor/issues/2000))
 * Fix! - Added condition for icon size control in Share Buttons widget
 
 #### 2017-07-12 v1.5.6

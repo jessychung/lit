@@ -74,8 +74,6 @@ class Mailchimp extends Action_Base {
 				'label' => __( 'Double Opt-In', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
-				'label_off' => __( 'No', 'elementor-pro' ),
-				'label_on' => __( 'Yes', 'elementor-pro' ),
 				'condition' => [
 					'mailchimp_list!' => '',
 				],

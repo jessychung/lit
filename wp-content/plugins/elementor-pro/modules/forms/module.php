@@ -8,6 +8,7 @@ use ElementorPro\Modules\Forms\Actions\Email;
 use ElementorPro\Modules\Forms\Actions\Email2;
 use ElementorPro\Modules\Forms\Actions\Mailchimp;
 use ElementorPro\Modules\Forms\Actions\Mailpoet;
+use ElementorPro\Modules\Forms\Actions\Mailpoet3;
 use ElementorPro\Modules\Forms\Actions\Redirect;
 use ElementorPro\Modules\Forms\Actions\Webhook;
 use ElementorPro\Modules\Forms\Classes\Ajax_Handler;
@@ -137,6 +138,11 @@ class Module extends Module_Base {
 		// MailPoet
 		if ( class_exists( '\WYSIJA' ) ) {
 			$this->add_form_action( 'mailpoet', new Mailpoet() );
+		}
+
+		// MailPoet
+		if ( class_exists( '\MailPoet\API\API' ) ) {
+			$this->add_form_action( 'mailpoet3', new Mailpoet3() );
 		}
 
 		// Add Actions as components, that runs manually in the Ajax_Handler

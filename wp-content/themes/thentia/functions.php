@@ -27,6 +27,17 @@ function my_custom_post_product() {
     );
     register_post_type( 'Products', $args );
 
+    $args = array(
+        'label'        => 'Team',
+        'description'   => 'Thentia team',
+        'public'        => true,
+        'menu_position' => 5,
+        'taxonomies'    => array('post_tag'),
+        'supports'      => array( 'title', 'editor', 'thumbnail'),
+        'has_archive'   => true,
+    );
+    register_post_type( 'Team', $args );
+
 
 }
 add_action( 'init', 'my_custom_post_product' );
@@ -40,3 +51,16 @@ function elementor_accordion_title() { ?>
     </script>
 <?php }
 add_action( 'wp_footer', 'elementor_accordion_title', 99 );
+
+function arphabet_widgets_init() {
+
+    register_sidebar( array(
+        'name' => 'Home right sidebar',
+        'id' => 'home_right_1',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="rounded">',
+        'after_title' => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'arphabet_widgets_init' );

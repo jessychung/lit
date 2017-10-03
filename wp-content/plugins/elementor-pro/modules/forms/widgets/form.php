@@ -41,7 +41,7 @@ class Form extends Form_Base {
 			'url' => __( 'URL', 'elementor-pro' ),
 			'checkbox' => __( 'Checkbox', 'elementor-pro' ),
 			'radio' => __( 'Radio', 'elementor-pro' ),
-			'recaptcha' => __( 'reCAPTCHA', 'elementor-pro' ),
+			'hidden' => __( 'Hidden', 'elementor-pro' ),
 		];
 
 		$field_types = apply_filters( 'elementor_pro/forms/field_types', $field_types );
@@ -68,6 +68,18 @@ class Form extends Form_Base {
 				'label' => __( 'Label', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
+			]
+		);
+
+		$repeater->add_control(
+			'field_value',
+			[
+				'label' => __( 'Value', 'elementor-pro' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => '',
+				'condition' => [
+					'field_type' => 'hidden',
+				]
 			]
 		);
 
@@ -101,8 +113,6 @@ class Form extends Form_Base {
 			[
 				'label' => __( 'Required', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'return_value' => 'true',
 				'default' => '',
 				'conditions' => [
@@ -113,6 +123,7 @@ class Form extends Form_Base {
 							'value' => [
 								'checkbox',
 								'recaptcha',
+								'hidden',
 							],
 						],
 					],
@@ -148,8 +159,6 @@ class Form extends Form_Base {
 			[
 				'label' => __( 'Inline List', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'return_value' => 'elementor-subgroup-inline',
 				'default' => '',
 				'conditions' => [
@@ -192,6 +201,7 @@ class Form extends Form_Base {
 							'name' => 'field_type',
 							'operator' => '!in',
 							'value' => [
+								'hidden',
 								'recaptcha',
 							],
 						],
@@ -589,8 +599,6 @@ class Form extends Form_Base {
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
 				'separator' => 'before',
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'render_type' => 'none',
 			]
 		);
@@ -649,6 +657,21 @@ class Form extends Form_Base {
 				'type' => Controls_Manager::TEXT,
 				'default' => $default_messages[ Ajax_Handler::INVALID_FORM ],
 				'placeholder' => $default_messages[ Ajax_Handler::INVALID_FORM ],
+				'label_block' => true,
+				'condition' => [
+					'custom_messages!' => '',
+				],
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'subscriber_already_exists_message',
+			[
+				'label' => __( 'Subscriber Already Exists Message', 'elementor-pro' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => $default_messages[ Ajax_Handler::SUBSCRIBER_ALREADY_EXISTS ],
+				'placeholder' => $default_messages[ Ajax_Handler::SUBSCRIBER_ALREADY_EXISTS ],
 				'label_block' => true,
 				'condition' => [
 					'custom_messages!' => '',
@@ -1104,6 +1127,11 @@ class Form extends Form_Base {
 					$this->form_fields_render_attributes( $item_index, $instance, $item );
 
 					$item = apply_filters( 'elementor_pro/forms/render/item', $item, $item_index, $this );
+
+					if ( 'hidden' === $item['field_type'] ) {
+						$item['field_label'] = false;
+						$this->add_render_attribute( 'input' . $item_index, 'value', $item['field_value'] );
+					}
 				?>
 				<div <?php echo $this->get_render_attribute_string( 'field-group' . $item_index ); ?>>
 					<?php
@@ -1129,6 +1157,7 @@ class Form extends Form_Base {
 						case 'url':
 						case 'password':
 						case 'tel':
+						case 'hidden':
 						case 'number':
 						case 'search':
 							$this->add_render_attribute( 'input' . $item_index, 'class', 'elementor-field-textual' );

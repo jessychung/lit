@@ -86,9 +86,7 @@ class Module extends Module_Base {
 
 	public function set_template_widget_type_meta( $post_id, $template_data ) {
 		if ( self::TEMPLATE_TYPE === $template_data['type'] ) {
-			$template_content = isset( $template_data['content'] ) ? $template_data['content'] : $template_data['data'];
-
-			update_post_meta( $post_id, self::WIDGET_TYPE_META_KEY, $template_content[0]['widgetType'] );
+			update_post_meta( $post_id, self::WIDGET_TYPE_META_KEY, $template_data['content'][0]['widgetType'] );
 		}
 	}
 
@@ -169,7 +167,7 @@ class Module extends Module_Base {
 	public function set_global_widget_included_posts_list( $post_id, $editor_data ) {
 		$global_widget_ids = [];
 
-		Plugin::elementor()->db->iterate_data( $editor_data, function ( $element_data ) use ( & $global_widget_ids ) {
+		Plugin::elementor()->db->iterate_data( $editor_data, function( $element_data ) use ( & $global_widget_ids ) {
 			if ( isset( $element_data['templateID'] ) ) {
 				$global_widget_ids[] = $element_data['templateID'];
 			}
@@ -195,8 +193,7 @@ class Module extends Module_Base {
 
 		$wpdb->query(
 			$wpdb->prepare(
-				"DELETE FROM {$wpdb->postmeta} WHERE `meta_key` = '%s' AND `post_id` IN (%s);",
-				'_elementor_css',
+				"DELETE FROM {$wpdb->postmeta} WHERE `meta_key` = '_elementor_css' AND `post_id` IN (%s);",
 				implode( ',', array_keys( $including_post_ids ) )
 			)
 		);

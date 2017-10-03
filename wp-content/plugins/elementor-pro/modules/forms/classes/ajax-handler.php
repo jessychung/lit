@@ -24,6 +24,7 @@ class Ajax_Handler {
 	const FIELD_REQUIRED = 'required_field';
 	const INVALID_FORM = 'invalid_form';
 	const SERVER_ERROR = 'server_error';
+	const SUBSCRIBER_ALREADY_EXISTS = 'subscriber_already_exists';
 
 	public static function is_form_submitted() {
 		return Utils::is_ajax() && isset( $_POST['action'] ) && 'elementor_pro_forms_send_form' === $_POST['action'];
@@ -36,6 +37,7 @@ class Ajax_Handler {
 			self::FIELD_REQUIRED => __( 'Required', 'elementor-pro' ),
 			self::INVALID_FORM => __( 'There\'s something wrong... The form is invalid.', 'elementor-pro' ),
 			self::SERVER_ERROR => __( 'Server error. Form not sent.', 'elementor-pro' ),
+			self::SUBSCRIBER_ALREADY_EXISTS => __( 'Subscriber already exist.', 'elementor-pro' ),
 		];
 	}
 

@@ -8,11 +8,11 @@ use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Utils;
-use Elementor\Widget_Base;
+use ElementorPro\Base\Base_Widget;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class Flip_Box extends Widget_Base {
+class Flip_Box extends Base_Widget {
 
 	public function get_name() {
 		return 'flip-box';
@@ -24,10 +24,6 @@ class Flip_Box extends Widget_Base {
 
 	public function get_icon() {
 		return 'eicon-flip-box';
-	}
-
-	public function get_categories() {
-		return [ 'pro-elements' ];
 	}
 
 	protected function _register_controls() {
@@ -361,12 +357,12 @@ class Flip_Box extends Widget_Base {
 				'type' => Controls_Manager::SELECT,
 				'default' => 'flip',
 				'options' => [
-					'flip' => __( 'Flip', 'elementor-pro' ),
-					'slide' => __( 'Slide', 'elementor-pro' ),
-					'push' => __( 'Push', 'elementor-pro' ),
-					'zoom-in' => __( 'Zoom In', 'elementor-pro' ),
-					'zoom-out' => __( 'Zoom Out', 'elementor-pro' ),
-					'fade' => __( 'Fade', 'elementor-pro' ),
+					'flip' => 'Flip',
+					'slide' => 'Slide',
+					'push' => 'Push',
+					'zoom-in' => 'Zoom In',
+					'zoom-out' => 'Zoom Out',
+					'fade' => 'Fade',
 				],
 				'prefix_class' => 'elementor-flip-box--effect-',
 			]

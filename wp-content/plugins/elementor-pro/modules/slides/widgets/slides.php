@@ -5,11 +5,11 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
 use Elementor\Scheme_Typography;
-use Elementor\Widget_Base;
+use ElementorPro\Base\Base_Widget;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class Slides extends Widget_Base {
+class Slides extends Base_Widget {
 
 	public function get_name() {
 		return 'slides';
@@ -109,8 +109,6 @@ class Slides extends Widget_Base {
 			[
 				'label' => __( 'Ken Burns Effect', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'return_value' => 'yes',
 				'default' => '',
 				'separator' => 'before',
@@ -153,8 +151,6 @@ class Slides extends Widget_Base {
 			[
 				'label' => __( 'Background Overlay', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'return_value' => 'yes',
 				'default' => '',
 				'separator' => 'before',
@@ -264,8 +260,6 @@ class Slides extends Widget_Base {
 			[
 				'label' => __( 'Custom', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'return_value' => 'yes',
 				'description'   => __( 'Set custom style that will only affect this specific slide.', 'elementor-pro' ),
 			]
@@ -499,8 +493,6 @@ class Slides extends Widget_Base {
 			[
 				'label' => __( 'Pause on Hover', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -511,8 +503,6 @@ class Slides extends Widget_Base {
 			[
 				'label' => __( 'Autoplay', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -538,8 +528,6 @@ class Slides extends Widget_Base {
 			[
 				'label' => __( 'Infinite Loop', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -1169,7 +1157,7 @@ class Slides extends Widget_Base {
 
 			$slide_html .= '</div>';
 			$slide_html = '<div class="slick-slide-bg' . $ken_class . '"></div><' . $slide_element . ' ' . $slide_attributes . ' class="slick-slide-inner">' . $slide_html . '</' . $slide_element . '>';
-			$slides[] = '<div class="elementor-repeater-item-' . $slide['_id'] . '">' . $slide_html . '</div>';
+			$slides[] = '<div class="elementor-repeater-item-' . $slide['_id'] . ' slick-slide">' . $slide_html . '</div>';
 			$slide_count++;
 		}
 

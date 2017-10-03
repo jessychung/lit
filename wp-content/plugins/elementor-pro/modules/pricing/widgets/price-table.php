@@ -8,11 +8,11 @@ use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
 use Elementor\Scheme_Color;
 use Elementor\Scheme_Typography;
-use Elementor\Widget_Base;
+use ElementorPro\Base\Base_Widget;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class Price_Table extends Widget_Base {
+class Price_Table extends Base_Widget {
 
 	public function get_name() {
 		return 'price-table';
@@ -24,10 +24,6 @@ class Price_Table extends Widget_Base {
 
 	public function get_icon() {
 		return 'eicon-price-table';
-	}
-
-	public function get_categories() {
-		return [ 'pro-elements' ];
 	}
 
 	protected function _register_controls() {
@@ -266,8 +262,6 @@ class Price_Table extends Widget_Base {
 			[
 				'label' => __( 'Show', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 				'separator' => 'before',
@@ -832,8 +826,6 @@ class Price_Table extends Widget_Base {
 			[
 				'label' => __( 'Divider', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 				'separator' => 'before',

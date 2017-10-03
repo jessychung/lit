@@ -11,11 +11,7 @@
     <title>Thentia</title>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <link rel='shortcut icon' href='<?php echo content_url (); ?>/uploads/2017/07/thentia_fav.ico'>
-
-    <!--Typekit-->
-    <script src="https://use.typekit.net/lfv1qcr.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel='shortcut icon' href='<?php echo content_url (); ?>/uploads/2017/08/thentia_fav.ico'>
 
     <!--Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -41,12 +37,9 @@
 
 <body>
 
-<div class="loading">
-    <div class='uil-rolling-css' style='transform:scale(0.36);'><div><div></div><div></div></div></div>
-</div>
+<?php wl_gear(); ?>
 
-
-<div class="side-menu">
+<div class="side-menu visible-xs">
 
     <div class="full-screen-hide">
         <div class="bars desk-bars animated-bars pointer-events">
@@ -54,8 +47,6 @@
             <div></div>
             <div></div>
         </div>
-
-        <h1>menu</h1>
 
         <div class="thentia-menu">
             <?php
@@ -75,12 +66,46 @@
     </div>
 </div>
 
+<div class="sticky-menu main-menu">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-8">
+                <a href="<?php echo home_url()?>">
+                    <img src="<?php echo content_url (); ?>/uploads/2017/08/thentia_logo_colour.svg" class="thentia-logo-w" width="150px">
+                </a>
+            </div>
+            <div class="col-md-9 col-sm-8 hidden-xs" style="text-align: right">
+                <?php
+                $defaults = array(
+                    'menu'            => 'top-menu',
+                    'container'       => '',
+                    'menu_class'      => 'menu',
+                    'echo'            => true,
+                    'fallback_cb'     => 'wp_page_menu',
+                    'depth'           => 0
+                );
+
+                wp_nav_menu( $defaults );
+
+                ?>
+            </div>
+            <div class="col-xs-4 visible-xs" style="text-align: right">
+                <div class="bars animated-bars mobile-bars">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="main-menu">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 col-sm-4 col-xs-8">
-                <a href="<?php home_url()?>">
-                    <img src="<?php echo content_url (); ?>/uploads/2017/07/thentia_logo_c.svg" class="thentia-logo-w" width="150px">
+                <a href="<?php echo home_url()?>">
+                    <img src="<?php echo content_url (); ?>/uploads/2017/08/thentia_logo_c.svg" class="thentia-logo-w" width="150px">
                 </a>
             </div>
             <div class="col-md-9 col-sm-8 hidden-xs" style="text-align: right">

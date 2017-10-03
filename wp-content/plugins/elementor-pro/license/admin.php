@@ -225,8 +225,9 @@ class Admin {
 			delete_option( 'elementor_tracker_notice' );
 		}
 
-		if ( ! isset( $_GET['elementor_tracker'] ) )
+		if ( ! isset( $_GET['elementor_tracker'] ) ) {
 			return;
+		}
 
 		if ( 'opt_out' === $_GET['elementor_tracker'] ) {
 			update_option( 'elementor_pro_tracker_notice', '1' );
@@ -235,11 +236,23 @@ class Admin {
 
 	private function _get_installed_time() {
 		$installed_time = get_option( '_elementor_pro_installed_time' );
+
 		if ( ! $installed_time ) {
 			$installed_time = time();
 			update_option( '_elementor_pro_installed_time', $installed_time );
 		}
+
 		return $installed_time;
+	}
+
+	public function plugin_action_links( $links ) {
+		$license_key = self::get_license_key();
+
+		if ( empty( $license_key ) ) {
+			$links['active_license'] = sprintf( '<a href="%s" class="elementor-plugins-gopro">%s</a>', self::get_url(), __( 'Activate License', 'elementor-pro' ) );
+		}
+
+		return $links;
 	}
 
 	public function __construct() {
@@ -251,6 +264,8 @@ class Admin {
 
 		// Add the licence key to Templates Library requests
 		add_filter( 'elementor/api/get_templates/body_args', [ $this, 'filter_library_get_templates_args' ] );
+
+		add_filter( 'plugin_action_links_' . ELEMENTOR_PRO_PLUGIN_BASE, [ $this, 'plugin_action_links' ], 50 );
 
 		add_action( 'admin_init', [ $this, 'handle_tracker_actions' ], 9 );
 

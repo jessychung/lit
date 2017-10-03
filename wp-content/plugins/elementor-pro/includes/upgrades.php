@@ -31,15 +31,12 @@ class Upgrades {
 
 		// Fix Button widget to new sizes options
 		$post_ids = $wpdb->get_col(
-			$wpdb->prepare(
-				'SELECT `post_id` FROM %1$s WHERE `meta_key` = "_elementor_data" AND `meta_value` LIKE "%2$s";',
-				$wpdb->postmeta,
-				'%"widgetType":"form"%'
-			)
+			'SELECT `post_id` FROM `' . $wpdb->postmeta . '` WHERE `meta_key` = "_elementor_data" AND `meta_value` LIKE \'%"widgetType":"form"%\';'
 		);
 
-		if ( empty( $post_ids ) )
+		if ( empty( $post_ids ) ) {
 			return;
+		}
 
 		foreach ( $post_ids as $post_id ) {
 			$data = Plugin::elementor()->db->get_plain_editor( $post_id );
@@ -124,15 +121,12 @@ class Upgrades {
 
 		// Move all posts columns to classic skin (Just add prefix)
 		$post_ids = $wpdb->get_col(
-			$wpdb->prepare(
-				'SELECT `post_id` FROM %1$s WHERE `meta_key` = "_elementor_data" AND `meta_value` LIKE "%2$s";',
-				$wpdb->postmeta,
-				'%"widgetType":"posts"%'
-			)
+			'SELECT `post_id` FROM `' . $wpdb->postmeta . '` WHERE `meta_key` = "_elementor_data" AND `meta_value` LIKE \'%"widgetType":"posts"%\';'
 		);
 
-		if ( empty( $post_ids ) )
+		if ( empty( $post_ids ) ) {
 			return;
+		}
 
 		foreach ( $post_ids as $post_id ) {
 			$data = Plugin::elementor()->db->get_plain_editor( $post_id );
@@ -175,8 +169,8 @@ class Upgrades {
 		$elementor_pro_upgrades = get_option( 'elementor_pro_upgrades', [] );
 
 		$upgrades = [
-			'1.3.0'  => '_upgrade_v130',
-			'1.4.0'  => '_upgrade_v140',
+			'1.3.0' => '_upgrade_v130',
+			'1.4.0' => '_upgrade_v140',
 		];
 
 		foreach ( $upgrades as $version => $function ) {

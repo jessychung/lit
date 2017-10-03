@@ -5,7 +5,9 @@ use ElementorPro\Base\Module_Base;
 use ElementorPro\Modules\Library\Classes\Shortcode;
 use ElementorPro\Plugin;
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 class Module extends Module_Base {
 
@@ -51,7 +53,7 @@ class Module extends Module_Base {
 		add_filter( 'elementor_pro/editor/localize_settings', [ $this, 'localize_settings' ] );
 		add_filter( 'elementor_pro/admin/localize_settings', [ $this, 'localize_settings' ] ); // For WordPress Widgets and Customizer
 
-		add_filter( 'elementor/widgets/black_list', function ( $black_list ) {
+		add_filter( 'elementor/widgets/black_list', function( $black_list ) {
 			$black_list[] = 'ElementorPro\Modules\Library\WP_Widgets\Elementor_Template';
 
 			return $black_list;

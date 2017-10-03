@@ -4,12 +4,14 @@ namespace ElementorPro\Modules\ShareButtons\Widgets;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
-use Elementor\Widget_Base;
+use ElementorPro\Base\Base_Widget;
 use ElementorPro\Modules\ShareButtons\Module;
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
-class Share_Buttons extends Widget_Base {
+class Share_Buttons extends Base_Widget {
 
 	private static $networks_class_dictionary = [
 		'google' => 'fa fa-google-plus',
@@ -37,10 +39,6 @@ class Share_Buttons extends Widget_Base {
 		return 'eicon-share';
 	}
 
-	public function get_categories() {
-		return [ 'pro-elements' ];
-	}
-
 	public function get_script_depends() {
 		return [ 'social-share' ];
 	}
@@ -64,7 +62,7 @@ class Share_Buttons extends Widget_Base {
 			[
 				'label' => __( 'Network', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
-				'options' => array_reduce( $networks_names,function ( $options, $network_name ) use ( $networks ) {
+				'options' => array_reduce( $networks_names, function( $options, $network_name ) use ( $networks ) {
 					$options[ $network_name ] = $networks[ $network_name ]['title'];
 
 					return $options;

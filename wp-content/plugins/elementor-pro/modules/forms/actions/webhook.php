@@ -46,8 +46,6 @@ class Webhook extends Action_Base {
 			[
 				'label' => __( 'Advanced Data', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'elementor-pro' ),
-				'label_off' => __( 'No', 'elementor-pro' ),
 				'default' => 'no',
 				'render_type' => 'none',
 			]

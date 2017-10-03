@@ -1,0 +1,202 @@
+/*
+Theme Name: cmtbc
+Theme URI:
+Author: Thentia
+Author URI:
+Description: cmtbc Theme
+Version: 1.0
+License: Commercial License
+License URI:
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: cmtbc
+*/
+
+$cmtbc-dark: #1d586f;
+
+@mixin hover-state {
+  &:hover, &:active, &:focus {
+    @content;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: #f2f4f6;
+  font-family: 'lato', sans-serif !important;
+  color: #607881;
+}
+
+::-moz-selection {
+  background: rgba(41, 158, 185, 0.1);
+}
+
+::selection {
+  background: rgba(41, 158, 185, 0.1);
+}
+
+.cmtbc-footer-contact span span {
+  color: rgba(29, 88, 111, 0.3);
+  font-weight: 700;
+  margin-right: 3px;
+}
+
+a {
+  color: #289db8;
+  font-size: 15px;
+}
+
+.h-menu {
+  li {
+    &:last-child {
+      a {
+        border-right: 0;
+      }
+    }
+    a {
+      border-right: 1px solid rgba(57, 79, 86, 0.3);
+    }
+  }
+}
+
+.cmtbc-search-bar {
+  .search-field {
+    width: 100%;
+    background-color: #e4e7e8;
+    outline: 0;
+    border: 0;
+    padding: 15px;
+    font-size: 15px;
+    color: #607881;
+    font-weight: 400;
+  }
+  .search-submit {
+    display: none;
+  }
+}
+
+.sub-menu {
+  background-color: #fff;
+}
+
+.cmtbc-desktop-nav .main-nav {
+  > a {
+    background-color: rgba(40, 157, 184, 0.15);
+    font-weight: 700;
+    ul {
+      background-color: #fff;
+    }
+  }
+}
+
+.e--pointer-overline .elementor-item:before {
+  background-color: rgba(40, 157, 184, 0.5) !important;
+}
+
+.elementor-nav-menu--main .elementor-nav-menu a {
+  white-space: normal !important;
+}
+
+.sub-menu.elementor-nav-menu--dropdown {
+  min-width: 20em !important;
+}
+
+.cmtbc-footer-menu {
+  h5 {
+    margin: 0;
+    margin-top: 10px;
+    color: #1d586f;
+    font-size: 16px;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      margin: 6px 0;
+      a {
+        color: #607881;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.sbttBacktotop {
+  bottom: 90px !important;
+}
+
+.cmtbc-copyright-menu-mobile {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+      display: inline-block;
+      border-right: 1px solid rgba(57, 79, 86, 0.31);
+      padding: 0 10px;
+      &:last-child {
+        border-right: 0;
+      }
+      &:first-child {
+        padding-left: 0;
+      }
+      a {
+        color: #394f56;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item{
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility:    hidden;
+  -ms-backface-visibility:     hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+
+.owl-controls {
+  text-align: left !important;
+}
+
+.cmtbc-homepage-post {
+  background-color: #fff;
+  h4 {
+    color: #1d586f;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .cmtbc-homepage-post-img{
+    height: 200px !important;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .cmtbc-post-left {
+    width: 50%;
+    float: left;
+  }
+  .cmtbc-post-right {
+    width: 50%;
+    float: left;
+  }
+}
+
+.owl-theme .owl-controls .owl-page span {
+  display: block;
+  width: 13px;
+  height: 13px;
+  margin: 5px 5px;
+  border: 2px solid #b3b2b3;
+  filter: Alpha(Opacity=50);
+  opacity: 0.5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 50px;
+  background: #ffffff;
+}
