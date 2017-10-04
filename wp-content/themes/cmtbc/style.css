@@ -16,7 +16,8 @@ body {
   overflow-x: hidden;
   background-color: #f2f4f6;
   font-family: 'lato', sans-serif !important;
-  color: #607881; }
+  color: #607881;
+  margin: 0; }
 
 ::-moz-selection {
   background: rgba(41, 158, 185, 0.1); }
@@ -178,3 +179,13 @@ a {
 
 .owl-pagination {
   padding: 0 15px 15px 55px; }
+
+@media only screen and (max-width: 767px) {
+  .cmtbc-homepage-post .cmtbc-post-left {
+    width: 100%;
+    padding: 20px 45px 0 45px; }
+  .cmtbc-homepage-post .cmtbc-post-right {
+    width: 100%;
+    padding: 0 45px 0 45px; }
+  .owl-pagination {
+    padding: 0 15px 15px 40px; } }
