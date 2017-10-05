@@ -240,6 +240,90 @@ a {
   padding: 0 15px 15px 55px;
 }
 
+.cmtbc-landing-menu {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      padding: 15px 0;
+      border-bottom: 2px solid rgba(96, 120, 129, 0.18);
+      width: 45% !important;
+      margin-right: 5% !important;
+      transition: all .3s;
+      &:after {
+        content: '\f105';
+        font-family: FontAwesome;
+        text-align: right;
+        float: right;
+        font-size: 22px;
+        color: rgba(40, 157, 184, 0.5);
+      }
+      &:nth-child(-n + 2) {
+        border-top: 2px solid rgba(96, 120, 129, 0.18);
+      }
+      a {
+        font-size: 18px;
+        color: #1d586f;
+        &:hover {
+          transition: all .3s;
+          color: rgba(29, 88, 111, 0.59);
+        }
+      }
+    }
+  }
+}
+
+.cmtbc-breadcrumbs {
+  > span  {
+    margin: 0 7px;
+  }
+  span {
+
+    span {
+      color: #fff;
+    }
+  }
+  a {
+    color: #fff;
+  }
+}
+
+.cmtbc-sidemenu {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    ul {
+      background-color: #f2f4f6;
+    }
+    li {
+      border-bottom: 2px solid rgba(96, 120, 129, 0.16);
+      &:first-child {
+        border-top:  2px solid rgba(96, 120, 129, 0.16);
+      }
+      li {
+        border: 0 !important;
+      }
+      a {
+        color: #1d586f;
+        display: block;
+        padding: 13px 15px;
+      }
+    }
+    li.page_item_has_children {
+      ul {
+        display: none;
+      }
+    }
+    li.current_page_parent {
+      background-color: #f2f4f6;
+      ul {
+        display: block;
+        padding: 5px 30px;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .cmtbc-homepage-post .cmtbc-post-left {
     width: 100%;
@@ -252,5 +336,17 @@ a {
   }
   .owl-pagination {
     padding: 0 15px 15px 40px;
+  }
+  .white-bg-mobile {
+    background-color: #fff;
+  }
+  .ccchildpages.twocol {
+    li {
+      width: 100% !important;
+      margin-right: 0 !important;
+      &:nth-child(2) {
+        border-top: 0;
+      }
+    }
   }
 }
