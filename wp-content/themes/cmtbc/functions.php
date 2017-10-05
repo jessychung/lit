@@ -17,15 +17,15 @@ add_filter( 'show_admin_bar', '__return_false' );
 function my_custom_post_product() {
 
     $args = array(
-        'label'        => 'Products',
-        'description'   => 'Thentia products',
+        'label'        => 'News',
+        'description'   => 'CMTBC news',
         'public'        => true,
         'menu_position' => 5,
         'taxonomies'    => array('post_tag'),
         'supports'      => array( 'title', 'editor', 'thumbnail'),
         'has_archive'   => true,
     );
-    register_post_type( 'Products', $args );
+    register_post_type( 'News', $args );
 
 }
 add_action( 'init', 'my_custom_post_product' );
@@ -43,7 +43,7 @@ add_action( 'wp_footer', 'elementor_accordion_title', 99 );
 function arphabet_widgets_init() {
 
     register_sidebar( array(
-        'name' => 'Widget',
+        'name' => 'Main Header',
         'id' => 'home_right_1',
         'before_widget' => '<div>',
         'after_widget' => '</div>',
