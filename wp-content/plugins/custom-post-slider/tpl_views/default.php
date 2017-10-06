@@ -37,7 +37,7 @@ function tzcustom_default($sldshowID,$template, $plist,$query,$query_arg,$slider
                 <div class="cmtbc-post-left">
                     <?php
                     if ($content['tzcustom_title_display'] == 'yes') { ?>
-                        <h4 class="tzcustom_title"><?php the_title(); ?></h4>
+                        <a href="<?php the_permalink(); ?>"><h4 class="tzcustom_title"><?php the_title(); ?></h4></a>
                     <?php }
                     ?>
                     <h5><?php the_date(); ?> | <?php the_category(', ')?></h5>

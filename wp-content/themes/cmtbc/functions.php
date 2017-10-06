@@ -14,21 +14,21 @@ add_theme_support( 'post-thumbnails' );
 add_filter( 'show_admin_bar', '__return_false' );
 
 
-function my_custom_post_product() {
-
-    $args = array(
-        'label'        => 'News',
-        'description'   => 'CMTBC news',
-        'public'        => true,
-        'menu_position' => 5,
-        'taxonomies'    => array('post_tag'),
-        'supports'      => array( 'title', 'editor', 'thumbnail'),
-        'has_archive'   => true,
-    );
-    register_post_type( 'News', $args );
-
-}
-add_action( 'init', 'my_custom_post_product' );
+//function my_custom_post_product() {
+//
+//    $args = array(
+//        'label'        => 'News',
+//        'description'   => 'CMTBC news',
+//        'public'        => true,
+//        'menu_position' => 5,
+//        'taxonomies'    => array('post_tag'),
+//        'supports'      => array( 'title', 'editor', 'thumbnail', 'categories'),
+//        'has_archive'   => true,
+//    );
+//    register_post_type( 'News', $args );
+//
+//}
+//add_action( 'init', 'my_custom_post_product' );
 
 function elementor_accordion_title() { ?>
     <script>

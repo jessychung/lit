@@ -225,12 +225,14 @@ a {
     background-color: #f2f4f6; }
   .cmtbc-sidemenu ul li {
     border-bottom: 2px solid rgba(96, 120, 129, 0.16); }
+    .cmtbc-sidemenu ul li.current_page_item {
+      background-color: #f2f4f6; }
     .cmtbc-sidemenu ul li:first-child {
       border-top: 2px solid rgba(96, 120, 129, 0.16); }
     .cmtbc-sidemenu ul li li {
       border: 0 !important; }
-    .cmtbc-sidemenu ul li.current_page_item {
-      background-color: #e5eaef; }
+      .cmtbc-sidemenu ul li li.current_page_item {
+        background-color: #e5eaef; }
     .cmtbc-sidemenu ul li a {
       color: #1d586f;
       display: block;
@@ -265,6 +267,8 @@ a {
     .cmtbc-sidemenu ul li.current_page_parent ul {
       display: block;
       padding: 5px 16px; }
+  .cmtbc-sidemenu ul li.custom-custom-post-type-parent:after {
+    content: ''; }
 
 .elementor-text-editor ul {
   list-style-type: none;
@@ -300,6 +304,36 @@ a {
 
 .elementor-toggle .elementor-toggle-content p {
   margin: 0 9px !important; }
+
+.cmtbc-data-table .tablepress {
+  margin-top: 10px !important; }
+  .cmtbc-data-table .tablepress thead th {
+    background-color: #f2f4f6 !important; }
+  .cmtbc-data-table .tablepress .odd td {
+    background-color: #f2f4f6; }
+  .cmtbc-data-table .tablepress tbody td {
+    border-top: 1px solid #e8e8e8; }
+  .cmtbc-data-table .tablepress .row-hover tr:hover td {
+    background-color: transparent; }
+
+.dataTables_info {
+  font-size: 14px; }
+
+.paging_simple .paginate_button.next:after, .paging_simple .paginate_button.previous:before {
+  font-family: FontAwesome !important;
+  content: "\f104" !important;
+  text-shadow: none !important;
+  color: #a4b2b7;
+  font-size: 15px !important; }
+
+.paging_simple .paginate_button.next:after {
+  content: "\f105" !important; }
+
+.dataTables_length {
+  display: none; }
+
+.dataTables_filter {
+  margin-bottom: 20px; }
 
 @media only screen and (max-width: 767px) {
   .cmtbc-homepage-post .cmtbc-post-left {
