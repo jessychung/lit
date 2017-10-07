@@ -5,62 +5,61 @@ function tzcustom_default($sldshowID,$template, $plist,$query,$query_arg,$slider
         <?php $count = 1;
         $the_query = new WP_Query($query_arg);
         while ($the_query->have_posts()) :
-        $the_query->the_post();
-        if ($template == 'owl'):
-        ?>
-        <div class="tzcustom_item cmtbc-homepage-post">
-            <?php
-            if ($content['tzcustom_image_display'] == 'yes') {
-                if (has_post_thumbnail()) { ?>
-
-                    <div style="position: relative">
-                        <div class="cmtbc-homepage-post-img" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
-                        <div class="cmtbc-homepage-news blend">
-                            <h1>News & Announcements</h1>
-                        </div>
-                    </div>
-
-
-
+            $the_query->the_post();
+            if ($template == 'owl'):
+                ?>
+                <div class="tzcustom_item cmtbc-homepage-post">
                     <?php
+                    if ($content['tzcustom_image_display'] == 'yes') {
+                        if (has_post_thumbnail()) { ?>
 
-                } elseif (isset($container['tzcustom_default_image']) && $container['tzcustom_default_image'] != '') {
-                    ?>
-                    <div class="cmtbc-homepage-post-img" style="background-image: url('<?php echo $container['tzcustom_default_image']; ?>')"></div>
+                            <div style="position: relative">
+                                <div class="cmtbc-homepage-post-img" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
+                                <div class="cmtbc-homepage-news blend">
+                                    <h1>News & Announcements</h1>
+                                </div>
+                            </div>
 
-                    <?php
-                }
-            }
-            ?>
-            <?php if($content['tzcustom_title_display'] == 'yes' || $content['tzcustom_excerpt_display'] == 'yes' ){ ?>
-            <div class="tzcustom-excerpt-<?php echo $template?>">
-                <div class="cmtbc-post-left">
-                    <?php
-                    if ($content['tzcustom_title_display'] == 'yes') { ?>
-                        <a href="<?php the_permalink(); ?>"><h4 class="tzcustom_title"><?php the_title(); ?></h4></a>
-                    <?php }
-                    ?>
-                    <h5><?php the_date(); ?> | <?php the_category(', ')?></h5>
-                </div>
-                <div class="cmtbc-post-right">
-                    <?php
-                    if ($content['tzcustom_excerpt_display'] == 'yes') {
-                        if ( ! has_excerpt() ) {
-                            ?>
-                            <p><?php the_excerpt()?></p>
+
+
                             <?php
-                        } else {
+                        } elseif (isset($container['tzcustom_default_image']) && $container['tzcustom_default_image'] != '') {
                             ?>
-                            <p><?php the_excerpt()?></p>
+                            <div class="cmtbc-homepage-post-img" style="background-image: url('<?php echo $container['tzcustom_default_image']; ?>')"></div>
+
                             <?php
                         }
-                    };
+                    }
                     ?>
+                    <?php if($content['tzcustom_title_display'] == 'yes' || $content['tzcustom_excerpt_display'] == 'yes' ){ ?>
+                        <div class="tzcustom-excerpt-<?php echo $template?>">
+                            <div class="cmtbc-post-left">
+                                <?php
+                                if ($content['tzcustom_title_display'] == 'yes') { ?>
+                                    <a href="<?php the_permalink(); ?>"><h4 class="tzcustom_title"><?php the_title(); ?></h4></a>
+                                <?php }
+                                ?>
+                                <h5><?php the_date(); ?> | <?php the_category(', ')?></h5>
+                            </div>
+                            <div class="cmtbc-post-right">
+                                <?php
+                                if ($content['tzcustom_excerpt_display'] == 'yes') {
+                                    if ( ! has_excerpt() ) {
+                                        ?>
+                                        <p><?php the_excerpt()?></p>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <p><?php the_excerpt()?></p>
+                                        <?php
+                                    }
+                                };
+                                ?>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
-            </div>
-            <?php } ?>
-        </div>
-<?php endif;$count++;endwhile; wp_reset_query(); ?>
+            <?php endif;$count++;endwhile; wp_reset_query(); ?>
     </div>
 
     <script>
@@ -83,6 +82,6 @@ function tzcustom_default($sldshowID,$template, $plist,$query,$query_arg,$slider
     </script>
 
 
-<?php
+    <?php
     return ob_get_clean();
 }

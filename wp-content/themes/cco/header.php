@@ -11,13 +11,16 @@
     <title><?php echo get_bloginfo( 'name' ); ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <link rel='shortcut icon' href='<?php echo content_url (); ?>/uploads/2017/10/cmtbc-favicon.png'>
+    <link rel='shortcut icon' href='<?php echo content_url (); ?>/uploads/2017/10/cco-icon.png'>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <!--Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <script src="https://use.fontawesome.com/ca8e0550f7.js"></script>
+    <!--Typekit-->
+    <script src="https://use.typekit.net/zlt6its.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
 

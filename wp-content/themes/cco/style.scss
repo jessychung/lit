@@ -1,0 +1,115 @@
+/*
+Theme Name: cco
+Theme URI:
+Author: Thentia
+Author URI:
+Description: cco Theme
+Version: 1.0
+License: Commercial License
+License URI:
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: cco
+*/
+
+$green: #18978f;
+$purple: #273a87;
+
+@mixin hover-state {
+  &:hover, &:active, &:focus {
+    @content;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: #fff;
+  font-family: "museo-sans-rounded",sans-serif;
+  color: #607881;
+  margin: 0;
+}
+
+::-moz-selection {
+  background: rgba(24, 151, 143, 0.1);
+}
+
+::selection {
+  background: rgba(24, 151, 143, 0.1);
+}
+
+.elementor-text-editor {
+  td {
+    padding: 5px;
+  }
+  p {
+    line-height: 1.4em;
+  }
+}
+
+.cco-search-bar {
+  .search-field {
+    width: 100%;
+    border: 1px solid #bcc2c4;
+    outline: 0;
+    padding: 8px 15px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #607881;
+    font-weight: 500;
+  }
+  .search-submit {
+    display: none;
+  }
+}
+
+.cco-main-nav-container {
+  margin-bottom: -55px;
+  z-index:10;
+}
+
+.cco-main-nav {
+  ul {
+  }
+  .sub-menu {
+    margin-top: 20px !important;
+    .sub-menu {
+      margin-top: 0 !important;
+    }
+    li {
+      a {
+        border-bottom: 1px solid #e4e8ea !important;
+      }
+    }
+  }
+}
+
+.cco-find-a {
+  background-color: rgba(39, 58, 135, 0.1);
+  transition: all .3s;
+  &:hover {
+    background-color: rgba(39, 58, 135, 0.2);
+    transition: all .3s;
+  }
+  .elementor-item:before, .elementor-item:after {
+    background-color: transparent !important;
+  }
+  a {
+    color: #273a87 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    font-weight: 700;
+    i {
+      margin-right: 7px;
+    }
+  }
+}
+
+.slick-dots {
+  padding-left: 45px !important;
+  text-align: left !important;
+}
+
+@media only screen and (max-width: 767px) {
+
+}
