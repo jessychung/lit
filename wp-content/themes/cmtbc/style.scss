@@ -309,6 +309,9 @@ a {
       border-bottom: 2px solid rgba(96, 120, 129, 0.16);
       &.current_page_item {
         background-color: #f2f4f6;
+        > ul {
+          display: block;
+        }
       }
       &:first-child {
         border-top:  2px solid rgba(96, 120, 129, 0.16);
@@ -346,6 +349,23 @@ a {
         display: none;
       }
     }
+    li.page_item_has_children.current_page_item {
+      position: relative;
+      &:after {
+        content: '\f107';
+        font-family: FontAwesome;
+        text-align: right;
+        position: absolute;
+        right: 15px;
+        top:11px;
+        font-size: 22px;
+        color: rgba(40, 157, 184, 0.5);
+      }
+      ul {
+        display: block;
+        padding: 0 16px 5px 16px;
+      }
+    }
     li.current_page_parent {
       background-color: #f2f4f6;
       &:after {
@@ -359,7 +379,7 @@ a {
       }
       ul {
         display: block;
-        padding: 5px 16px;
+        padding: 0 16px 5px 16px;
       }
     }
     li.custom-custom-post-type-parent {

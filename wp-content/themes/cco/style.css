@@ -16,7 +16,7 @@ body {
   overflow-x: hidden;
   background-color: #fff;
   font-family: "museo-sans",sans-serif;
-  color: #607881;
+  color: #46535b;
   margin: 0; }
 
 ::-moz-selection {
@@ -65,6 +65,44 @@ a {
 
 .cco-main-nav .sub-menu {
   border-radius: 3px; }
+
+.cco-main-nav .current_page_ancestor > a {
+  color: #18978f !important; }
+  .cco-main-nav .current_page_ancestor > a:after {
+    content: "";
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    background-color: #18978f;
+    opacity: 1 !important;
+    z-index: 2; }
+
+.cco-main-nav .current_page_ancestor .current_page_ancestor a:after {
+  opacity: 0 !important; }
+
+.cco-main-nav .current_page_parent > a {
+  color: #18978f !important; }
+  .cco-main-nav .current_page_parent > a:after {
+    content: "";
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    background-color: #18978f;
+    opacity: 1 !important;
+    z-index: 2; }
+
+.cco-main-nav .current_page_parent .current_page_parent a:after {
+  opacity: 0 !important; }
+
+.cco-member-login {
+  background-color: #273a87; }
+  .cco-member-login a {
+    color: #fff !important; }
+    .cco-member-login a:hover {
+      color: #fff !important;
+      background-color: #273a87 !important; }
 
 .elementor-post__text {
   background-color: #fff;
@@ -193,6 +231,9 @@ a {
     border-bottom: 1px solid #e4e8ea; }
     .cco-sidemenu ul li.current_page_item {
       background-color: #f2f4f6; }
+      .cco-sidemenu ul li.current_page_item > a {
+        color: #46535B;
+        font-weight: 700; }
     .cco-sidemenu ul li:first-child {
       border-top: 1px solid #e4e8ea; }
     .cco-sidemenu ul li li {
@@ -211,6 +252,32 @@ a {
     position: relative; }
     .cco-sidemenu ul li.page_item_has_children ul {
       display: none; }
+  .cco-sidemenu ul li.page_item_has_children.current_page_item > a {
+    color: #46535B;
+    font-weight: 700; }
+  .cco-sidemenu ul li.page_item_has_children.current_page_item > ul {
+    display: block;
+    padding: 0 15px 10px 20px; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_item > ul li {
+      position: relative; }
+      .cco-sidemenu ul li.page_item_has_children.current_page_item > ul li:after {
+        content: '\f054';
+        font-family: FontAwesome;
+        text-align: left;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        font-size: 12px;
+        color: #18978f;
+        pointer-events: none; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_item > ul a {
+      color: rgba(70, 83, 91, 0.65);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 7px 20px; }
+      .cco-sidemenu ul li.page_item_has_children.current_page_item > ul a:hover {
+        transition: all .3s;
+        color: #46535b; }
   .cco-sidemenu ul li.page_item_has_children.current_page_ancestor {
     position: relative;
     background-color: #f2f4f6; }
@@ -230,12 +297,13 @@ a {
       left: 0;
       top: 10px;
       font-size: 12px;
-      color: #18978f; }
+      color: #18978f;
+      pointer-events: none; }
     .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent .current_page_item {
       background-color: #e4e8ea; }
       .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent .current_page_item a {
         color: #46535B;
-        font-weight: 700; }
+        font-weight: 700 !important; }
     .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent ul {
       display: block; }
       .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent ul li:after {
@@ -261,7 +329,8 @@ a {
           left: 0;
           top: 10px;
           font-size: 12px;
-          color: #18978f; }
+          color: #18978f;
+          pointer-events: none; }
       .cco-sidemenu ul li.page_item_has_children.current_page_ancestor ul a {
         color: rgba(70, 83, 91, 0.65);
         font-weight: 500;
@@ -270,18 +339,50 @@ a {
         .cco-sidemenu ul li.page_item_has_children.current_page_ancestor ul a:hover {
           transition: all .3s;
           color: #46535b; }
+      .cco-sidemenu ul li.page_item_has_children.current_page_ancestor ul ul {
+        padding: 0 15px 0 20px; }
+  .cco-sidemenu ul li.page_item_has_children.current_page_ancestor.current_page_parent .current_page_item ul {
+    display: block; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_ancestor.current_page_parent .current_page_item ul li:after {
+      content: ''; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_ancestor.current_page_parent .current_page_item ul a {
+      color: rgba(70, 83, 91, 0.65);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 5px 10px; }
+      .cco-sidemenu ul li.page_item_has_children.current_page_ancestor.current_page_parent .current_page_item ul a:hover {
+        transition: all .3s;
+        color: #46535b; }
+  .cco-sidemenu ul li.page_item_has_children.current_page_ancestor.current_page_parent .current_page_item a {
+    font-weight: 700;
+    color: #46535B; }
   .cco-sidemenu ul li.current_page_parent {
     background-color: #f2f4f6; }
-    .cco-sidemenu ul li.current_page_parent:after {
-      content: '\f107';
-      font-family: FontAwesome;
-      text-align: right;
-      position: absolute;
-      right: 15px;
-      font-size: 22px;
-      color: rgba(40, 157, 184, 0.5); }
     .cco-sidemenu ul li.current_page_parent ul {
       display: block;
       padding: 5px 16px; }
   .cco-sidemenu ul li.custom-custom-post-type-parent:after {
     content: ''; }
+
+.elementor-text-editor ul, .elementor-text-editor ol {
+  list-style-type: none;
+  padding-left: 0; }
+  .elementor-text-editor ul li, .elementor-text-editor ol li {
+    text-indent: -1em;
+    margin-left: 2em;
+    margin-bottom: .5em; }
+    .elementor-text-editor ul li:before, .elementor-text-editor ol li:before {
+      content: '\f054';
+      font-family: FontAwesome;
+      color: #18978f;
+      font-size: 10px;
+      padding: 5px 7px;
+      border-radius: 100px;
+      background-color: rgba(24, 151, 143, 0.17);
+      margin-right: 8px;
+      margin-left: -15px; }
+
+.elementor-text-editor li {
+  line-height: 1.4em;
+  font-weight: 300;
+  font-size: 15px; }
