@@ -15,7 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   background-color: #fff;
-  font-family: "museo-sans-rounded",sans-serif;
+  font-family: "museo-sans",sans-serif;
   color: #607881;
   margin: 0; }
 
@@ -25,6 +25,12 @@ body {
 ::selection {
   background: rgba(24, 151, 143, 0.1); }
 
+a {
+  color: #18978f; }
+
+.elementor-text-editor a {
+  font-weight: 700; }
+
 .elementor-text-editor td {
   padding: 5px; }
 
@@ -32,6 +38,9 @@ body {
   line-height: 1.4em;
   font-weight: 300;
   font-size: 15px; }
+
+.elementor-text-editor h2, .elementor-text-editor h5 {
+  line-height: 1.4em; }
 
 .cco-search-bar .search-field {
   width: 100%;
@@ -119,7 +128,8 @@ body {
     padding: 10px; }
     .cco-quicklinks ul li a {
       color: #46535b;
-      font-size: 16px; }
+      font-size: 16px;
+      font-weight: 500; }
   .cco-quicklinks ul li:before {
     font-family: 'FontAwesome';
     content: '\f054';
@@ -129,3 +139,149 @@ body {
     font-size: 10px;
     padding: 3px 5px;
     border-radius: 100px; }
+
+.cco-info {
+  border: 1px solid #e4e8ea;
+  border-radius: 3px;
+  padding: 10px 20px 10px 30px;
+  margin-left: 18px; }
+  .cco-info:before {
+    content: '\f129';
+    font-family: 'FontAwesome';
+    color: rgba(39, 58, 135, 0.75);
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    border: 1px solid #e4e8ea;
+    background-color: #f2f5f7;
+    border-radius: 100px;
+    position: absolute;
+    line-height: 38px;
+    top: 20px;
+    left: -20px; }
+
+.cco-events table {
+  border: 1px solid #d1d8db;
+  border-radius: 3px;
+  border-spacing: 0;
+  float: left; }
+  .cco-events table tr:first-child {
+    background-color: #f2f5f7; }
+    .cco-events table tr:first-child td {
+      font-size: 12px; }
+  .cco-events table td {
+    text-align: center; }
+
+.cco-events p {
+  margin-bottom: -15px; }
+
+.cco-breadcrumbs {
+  color: rgba(255, 255, 255, 0.45); }
+  .cco-breadcrumbs span {
+    margin: 0 5px; }
+    .cco-breadcrumbs span span {
+      color: #fff;
+      font-size: 14px;
+      margin: 0; }
+
+.cco-sidemenu ul {
+  list-style-type: none;
+  padding-left: 0; }
+  .cco-sidemenu ul ul {
+    background-color: #f2f4f6; }
+  .cco-sidemenu ul li {
+    border-bottom: 1px solid #e4e8ea; }
+    .cco-sidemenu ul li.current_page_item {
+      background-color: #f2f4f6; }
+    .cco-sidemenu ul li:first-child {
+      border-top: 1px solid #e4e8ea; }
+    .cco-sidemenu ul li li {
+      border: 0 !important; }
+    .cco-sidemenu ul li a {
+      color: rgba(70, 83, 91, 0.65);
+      display: block;
+      padding: 15px;
+      transition: all .3s;
+      font-size: 16px;
+      font-weight: 500; }
+      .cco-sidemenu ul li a:hover {
+        transition: all .3s;
+        color: #46535b; }
+  .cco-sidemenu ul li.page_item_has_children {
+    position: relative; }
+    .cco-sidemenu ul li.page_item_has_children ul {
+      display: none; }
+  .cco-sidemenu ul li.page_item_has_children.current_page_ancestor {
+    position: relative;
+    background-color: #f2f4f6; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_ancestor > a {
+      color: #46535B;
+      font-weight: 700; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children ul {
+      display: none; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent > a {
+      color: #46535B;
+      font-weight: 700; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent:after {
+      content: '\f078';
+      font-family: FontAwesome;
+      text-align: left;
+      position: absolute;
+      left: 0;
+      top: 10px;
+      font-size: 12px;
+      color: #18978f; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent .current_page_item {
+      background-color: #e4e8ea; }
+      .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent .current_page_item a {
+        color: #46535B;
+        font-weight: 700; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent ul {
+      display: block; }
+      .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent ul li:after {
+        content: ''; }
+      .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent ul a {
+        color: rgba(70, 83, 91, 0.65);
+        font-weight: 500;
+        font-size: 15px;
+        padding: 5px 10px; }
+        .cco-sidemenu ul li.page_item_has_children.current_page_ancestor li.page_item_has_children.current_page_ancestor.current_page_parent ul a:hover {
+          transition: all .3s;
+          color: #46535b; }
+    .cco-sidemenu ul li.page_item_has_children.current_page_ancestor ul {
+      display: block;
+      padding: 0 15px 10px 20px; }
+      .cco-sidemenu ul li.page_item_has_children.current_page_ancestor ul li {
+        position: relative; }
+        .cco-sidemenu ul li.page_item_has_children.current_page_ancestor ul li:after {
+          content: '\f054';
+          font-family: FontAwesome;
+          text-align: left;
+          position: absolute;
+          left: 0;
+          top: 10px;
+          font-size: 12px;
+          color: #18978f; }
+      .cco-sidemenu ul li.page_item_has_children.current_page_ancestor ul a {
+        color: rgba(70, 83, 91, 0.65);
+        font-weight: 500;
+        font-size: 15px;
+        padding: 7px 20px; }
+        .cco-sidemenu ul li.page_item_has_children.current_page_ancestor ul a:hover {
+          transition: all .3s;
+          color: #46535b; }
+  .cco-sidemenu ul li.current_page_parent {
+    background-color: #f2f4f6; }
+    .cco-sidemenu ul li.current_page_parent:after {
+      content: '\f107';
+      font-family: FontAwesome;
+      text-align: right;
+      position: absolute;
+      right: 15px;
+      font-size: 22px;
+      color: rgba(40, 157, 184, 0.5); }
+    .cco-sidemenu ul li.current_page_parent ul {
+      display: block;
+      padding: 5px 16px; }
+  .cco-sidemenu ul li.custom-custom-post-type-parent:after {
+    content: ''; }
