@@ -29,7 +29,9 @@ body {
   padding: 5px; }
 
 .elementor-text-editor p {
-  line-height: 1.4em; }
+  line-height: 1.4em;
+  font-weight: 300;
+  font-size: 15px; }
 
 .cco-search-bar .search-field {
   width: 100%;
@@ -48,12 +50,19 @@ body {
   margin-bottom: -55px;
   z-index: 10; }
 
+.elementor-editor-active .cco-main-nav-container {
+  margin-bottom: 0;
+  z-index: 0; }
+
 .cco-main-nav .sub-menu {
-  margin-top: 20px !important; }
-  .cco-main-nav .sub-menu .sub-menu {
-    margin-top: 0 !important; }
-  .cco-main-nav .sub-menu li a {
-    border-bottom: 1px solid #e4e8ea !important; }
+  border-radius: 3px; }
+
+.elementor-post__text {
+  background-color: #fff;
+  padding: 15px; }
+
+.elementor-posts--skin-classic .elementor-post__thumbnail__link {
+  margin-bottom: 0 !important; }
 
 .cco-find-a {
   background-color: rgba(39, 58, 135, 0.1);
@@ -74,3 +83,49 @@ body {
 .slick-dots {
   padding-left: 45px !important;
   text-align: left !important; }
+
+.cco-footer-menu ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0; }
+  .cco-footer-menu ul li {
+    display: inline-block;
+    border-right: 1px solid #e6e6e6;
+    padding: 0 10px; }
+    .cco-footer-menu ul li:last-child {
+      border-right: 0; }
+    .cco-footer-menu ul li:first-child {
+      padding-left: 0; }
+    .cco-footer-menu ul li a {
+      color: #3c454c;
+      font-size: 14px; }
+
+.cco-quicklinks .elementor-widget-container {
+  border: 1px solid #e4e8ea;
+  border-radius: 3px; }
+
+.cco-quicklinks h5 {
+  color: #46535b;
+  font-weight: 700;
+  font-size: 17px;
+  background-color: #f2f5f7;
+  margin-top: 0;
+  padding: 15px 20px;
+  margin-bottom: 0; }
+
+.cco-quicklinks ul {
+  list-style-type: none; }
+  .cco-quicklinks ul li {
+    padding: 10px; }
+    .cco-quicklinks ul li a {
+      color: #46535b;
+      font-size: 16px; }
+  .cco-quicklinks ul li:before {
+    font-family: 'FontAwesome';
+    content: '\f054';
+    margin: 0px 9px 0 -30px;
+    color: #273a87;
+    border: 2px solid #273a87;
+    font-size: 10px;
+    padding: 3px 5px;
+    border-radius: 100px; }

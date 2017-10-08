@@ -55,7 +55,7 @@ function arphabet_widgets_init() {
 add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 function new_excerpt_length($length) {
-    return 20;
+    return 10;
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 
